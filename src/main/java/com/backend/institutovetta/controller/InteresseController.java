@@ -1,7 +1,7 @@
 package com.backend.institutovetta.controller;
 
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseDTO;
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseResponseDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseResponseDTO;
 import com.backend.institutovetta.exception.BusinessException;
 import com.backend.institutovetta.exception.ErroResponse;
 import com.backend.institutovetta.service.InteresseService;
@@ -26,8 +26,6 @@ public class InteresseController {
         try {
 
             InteresseResponseDTO  interesseResponseDTO = interesseService.criarLeadinteresse(interesseDTO);
-
-            System.out.println(interesseResponseDTO);
 
             if (interesseResponseDTO == null) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

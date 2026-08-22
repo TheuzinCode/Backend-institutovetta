@@ -14,7 +14,7 @@ import java.io.IOException;
 @CrossOrigin("*")
 @RestController
 @AllArgsConstructor
-@RequestMapping("/Cursos")
+@RequestMapping("/cursos")
 public class CursoController {
 
     private CursoService cursoService;
@@ -38,5 +38,6 @@ public class CursoController {
             return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));
         }
     }
+
 
 }

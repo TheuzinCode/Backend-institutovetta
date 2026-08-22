@@ -1,4 +1,4 @@
-package com.backend.institutovetta.domain.leads.interesse.dto;
+package com.backend.institutovetta.domain.leads.contato.dto;
 
 import java.util.UUID;
 

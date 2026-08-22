@@ -19,6 +19,7 @@ import java.time.Instant;
 @NoArgsConstructor
 public class Lead {
 
+    // LEAD DA PAGINA LANDING PAGE FORM
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

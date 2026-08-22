@@ -1,8 +1,8 @@
 package com.backend.institutovetta.service;
 
-import com.backend.institutovetta.domain.leads.interesse.Interesse;
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseDTO;
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseResponseDTO;
+import com.backend.institutovetta.domain.leads.contato.Interesse;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseResponseDTO;
 import com.backend.institutovetta.mapper.InteressesMapper;
 import com.backend.institutovetta.repository.InteresseRepository;
 import lombok.AllArgsConstructor;

@@ -1,5 +1,4 @@
-package com.backend.institutovetta.domain.leads.interesse;
-
+package com.backend.institutovetta.domain.leads.LeadCursoEspecifico;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -11,12 +10,14 @@ import lombok.Setter;
 import java.util.UUID;
 
 @Entity
-@Table(name = "lead_interesses")
+@Table(name = "leads_curso_especifico")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Interesse {
+public class LeadCurso {
+
+    // LEAD DA PAGINA DE CURSOS QUE ELE ESCOLHEU ESPECIFICO
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -31,7 +32,6 @@ public class Interesse {
     @NotBlank(message = "campo telefone obrigatorio")
     private String telefone;
 
-    @NotBlank(message = "campo curso de interesse obrigatorio")
-    private String cursoInteresse;
+    private String cursoEscolhido;
 
 }

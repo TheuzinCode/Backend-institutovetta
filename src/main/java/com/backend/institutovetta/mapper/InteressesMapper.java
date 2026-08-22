@@ -1,10 +1,9 @@
 package com.backend.institutovetta.mapper;
 
-import com.backend.institutovetta.domain.leads.interesse.Interesse;
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseDTO;
-import com.backend.institutovetta.domain.leads.interesse.dto.InteresseResponseDTO;
+import com.backend.institutovetta.domain.leads.contato.Interesse;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.InteresseResponseDTO;
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring")
 public interface InteressesMapper {

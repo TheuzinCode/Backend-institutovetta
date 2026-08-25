@@ -1,6 +1,7 @@
 package com.backend.institutovetta.controller;
 
 import com.backend.institutovetta.domain.curso.dto.CursoCriarDTO;
+import com.backend.institutovetta.domain.curso.dto.CursosDetalhesDTO;
 import com.backend.institutovetta.exception.BusinessException;
 import com.backend.institutovetta.exception.ErroResponse;
 import lombok.AllArgsConstructor;
@@ -39,5 +40,14 @@ public class CursoController {
         }
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarPorId(@PathVariable Long id){
+        try {
+            CursosDetalhesDTO cursosDetalhesDTO = cursoService.buscarCursoById(id);
 
+            return ResponseEntity.ok().body(cursosDetalhesDTO);
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));
+        }
+    }
 }

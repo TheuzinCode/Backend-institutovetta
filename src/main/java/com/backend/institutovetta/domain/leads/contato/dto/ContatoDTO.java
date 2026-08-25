@@ -2,7 +2,7 @@ package com.backend.institutovetta.domain.leads.contato.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record InteresseDTO(
+public record ContatoDTO(
 
         @NotBlank(message = "campo nome obrigatorio")
         String nome,
@@ -14,6 +14,8 @@ public record InteresseDTO(
         String telefone,
 
         @NotBlank(message = "campo curso interesse obrigatorio")
-        String cursoInteresse
+        String assunto,
+
+        String mensagem
 ) {
 }

@@ -2,12 +2,13 @@ package com.backend.institutovetta.domain.leads.contato.dto;
 
 import java.util.UUID;
 
-public record InteresseResponseDTO(
+public record ContatoResponseDTO(
 
         UUID id,
         String nome,
         String email,
         String telefone,
-        String cursoInteresse
+        String assunto,
+        String mensagem
 ) {
 }

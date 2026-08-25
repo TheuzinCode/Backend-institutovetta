@@ -1,10 +1,10 @@
 package com.backend.institutovetta.controller;
 
-import com.backend.institutovetta.domain.leads.contato.dto.InteresseDTO;
-import com.backend.institutovetta.domain.leads.contato.dto.InteresseResponseDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.ContatoDTO;
+import com.backend.institutovetta.domain.leads.contato.dto.ContatoResponseDTO;
 import com.backend.institutovetta.exception.BusinessException;
 import com.backend.institutovetta.exception.ErroResponse;
-import com.backend.institutovetta.service.InteresseService;
+import com.backend.institutovetta.service.ContatoService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,27 +12,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
-@RequestMapping()
+@RequestMapping("/contato")
 @RestController
 @AllArgsConstructor
-public class InteresseController {
+public class ContatoController {
 
-    private InteresseService interesseService;
+    private ContatoService contatoService;
 
 
-    @PostMapping("/novo/LeadInteresse")
-    public ResponseEntity<?> novoInteresse(@RequestBody @Valid InteresseDTO  interesseDTO){
-        System.out.println(interesseDTO);
+    @PostMapping("/novo/leadcontato")
+    public ResponseEntity<?> novoInteresse(@RequestBody @Valid ContatoDTO contatoDTO){
+
         try {
 
-            InteresseResponseDTO  interesseResponseDTO = interesseService.criarLeadinteresse(interesseDTO);
+            ContatoResponseDTO contatoResponseDTO = contatoService.criarLeadinteresse(contatoDTO);
 
-            if (interesseResponseDTO == null) {
+            if (contatoResponseDTO == null) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(new ErroResponse("Não foi possível criar o interesse."));
             }
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(interesseResponseDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(contatoResponseDTO);
 
         } catch (BusinessException e) {
             return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));

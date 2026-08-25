@@ -18,7 +18,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Interesse {
+public class Contato {
 
     // LEAD DA PAGINA CONTATO
 
@@ -35,8 +35,10 @@ public class Interesse {
     @NotBlank(message = "campo telefone obrigatorio")
     private String telefone;
 
-    @NotBlank(message = "campo curso de interesse obrigatorio")
-    private String cursoInteresse;
+    @NotBlank(message = "campo assunto obrigatorio")
+    private String assunto;
+
+    private String mensagem;
 
     @CreationTimestamp
     private Instant creationTimestamp;

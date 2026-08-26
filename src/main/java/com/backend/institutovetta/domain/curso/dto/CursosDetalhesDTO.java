@@ -8,9 +8,11 @@ public record CursosDetalhesDTO(
         Long id,
         String nome,
         String descricao,
+        String categoria,
+        String sobreCurso,
         double duracao,
         double avaliacao,
-        byte [] imagemCurso,
+        byte[] imagemCapaCurso,
         List<Modulo> modulos
 ) {
 }

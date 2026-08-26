@@ -32,6 +32,9 @@ public class Curso {
     @NotBlank(message = "O descricao é obrigatório.")
     private String descricao;
 
+    @NotBlank(message = "o resumo é obrigatorio.")
+    private String sobreCurso;
+
     @Column(name = "imagem-curso", columnDefinition = "BYTEA")
     private byte[] imagemCapaCurso;
 
@@ -43,7 +46,7 @@ public class Curso {
     @Min(value = 1, message = "A avaliacao deve ser maior que 0.")
     private double avaliacao;
 
-    @NotBlank(message = "O avaliacao é obrigatório.")
+    @NotBlank(message = "O categoria é obrigatório.")
     private String categoria;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})

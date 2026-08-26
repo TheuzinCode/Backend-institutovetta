@@ -64,6 +64,8 @@ public class CursoService {
 
         curso.setImagemCapaCurso(imagem.getBytes());
 
+        curso.setSobreCurso(cursoCriarDTO.sobreCurso());
+
 
 
         List<Modulo> modulosGerenciados = new ArrayList<>();

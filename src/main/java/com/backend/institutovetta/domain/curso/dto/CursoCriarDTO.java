@@ -17,6 +17,9 @@ public record CursoCriarDTO(
         @NotBlank(message = "campo categoria obrigatorio")
         String categoria,
 
+        @NotBlank(message = "o resumo é obrigatorio.")
+        String sobreCurso,
+
         @NotNull(message = "campo duracao obrigatorio")
         double duracao,
 

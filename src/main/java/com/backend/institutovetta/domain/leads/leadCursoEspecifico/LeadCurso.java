@@ -1,4 +1,4 @@
-package com.backend.institutovetta.domain.leads.LeadCursoEspecifico;
+package com.backend.institutovetta.domain.leads.leadCursoEspecifico;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

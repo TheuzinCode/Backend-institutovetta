@@ -1,7 +1,7 @@
 package com.backend.institutovetta.controller;
 
-import com.backend.institutovetta.domain.leads.LeadCursoEspecifico.dto.LeadCursoDTO;
-import com.backend.institutovetta.domain.leads.LeadCursoEspecifico.dto.LeadCursoResponseDTO;
+import com.backend.institutovetta.domain.leads.leadCursoEspecifico.dto.LeadCursoDTO;
+import com.backend.institutovetta.domain.leads.leadCursoEspecifico.dto.LeadCursoResponseDTO;
 import com.backend.institutovetta.exception.BusinessException;
 import com.backend.institutovetta.exception.ErroResponse;
 import com.backend.institutovetta.service.LeadCursoService;

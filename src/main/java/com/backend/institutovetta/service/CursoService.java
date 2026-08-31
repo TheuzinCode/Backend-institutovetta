@@ -89,6 +89,24 @@ public class CursoService {
     }
 
 
+    public List<CursoListarDTO> buscarCursosParametros(String nome, String categoria){
+
+        List<Curso> listarCursos = cursoRepository.buscarComFiltros(nome, categoria);
+
+        return listarCursos.stream().map( curso -> new CursoListarDTO(
+                curso.getId(),
+                curso.getNome(),
+                curso.getDescricao(),
+                curso.getCategoria(),
+                curso.getDuracao(),
+                curso.getAvaliacao(),
+                curso.getImagemCapaCurso()
+        )).toList();
+
+    }
+
+
+
 
 
 

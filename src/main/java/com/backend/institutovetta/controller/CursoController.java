@@ -1,6 +1,7 @@
 package com.backend.institutovetta.controller;
 
 import com.backend.institutovetta.domain.curso.dto.CursoCriarDTO;
+import com.backend.institutovetta.domain.curso.dto.CursoListarDTO;
 import com.backend.institutovetta.domain.curso.dto.CursosDetalhesDTO;
 import com.backend.institutovetta.exception.BusinessException;
 import com.backend.institutovetta.exception.ErroResponse;
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.backend.institutovetta.service.CursoService;
 
 import java.io.IOException;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
@@ -49,5 +51,18 @@ public class CursoController {
         } catch (BusinessException e) {
             return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));
         }
+    }
+
+    @GetMapping(params = "nome")
+    public ResponseEntity<?> buscarPorParametros(@RequestParam(required = false) String nome,
+                                                 @RequestParam(required = false) String categoria){
+        try {
+                List<CursoListarDTO> cursoListarDTOList = cursoService.buscarCursosParametros(nome, categoria);
+            return ResponseEntity.ok().body(cursoListarDTOList);
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));
+        }
+
+
     }
 }

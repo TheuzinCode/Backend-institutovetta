@@ -1,4 +1,4 @@
-package com.backend.institutovetta.domain.leads.LeadCursoEspecifico.dto;
+package com.backend.institutovetta.domain.leads.leadCursoEspecifico.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

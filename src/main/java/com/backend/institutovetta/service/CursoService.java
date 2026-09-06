@@ -105,6 +105,27 @@ public class CursoService {
 
     }
 
+    public List<CursoListarDTO> buscarRelacionados (Long id){
+
+        Curso curso = cursoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Curso não encontrado"));
+
+
+        List<Curso> listaCursos = cursoRepository.findTop4ByCategoriaAndIdNot(curso.getCategoria(), id);
+
+
+        return listaCursos.stream().map(curso1 -> new CursoListarDTO(
+                curso.getId(),
+                curso.getNome(),
+                curso.getDescricao(),
+                curso.getCategoria(),
+                curso.getDuracao(),
+                curso.getAvaliacao(),
+                curso.getImagemCapaCurso()
+        )).toList();
+
+    }
+
 
 
 

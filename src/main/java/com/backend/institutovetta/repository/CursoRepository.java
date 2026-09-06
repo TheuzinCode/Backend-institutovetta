@@ -19,4 +19,9 @@ public interface CursoRepository extends JpaRepository<Curso, Long> {
     List<Curso> buscarComFiltros(
             @Param("nome") String nome,
             @Param("categoria") String categoria);
+
+    List<Curso> findTop4ByCategoriaAndIdNot(
+            String categoria,
+            Long id
+    );
 }

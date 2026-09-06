@@ -1,5 +1,6 @@
 package com.backend.institutovetta.controller;
 
+import com.backend.institutovetta.domain.curso.Curso;
 import com.backend.institutovetta.domain.curso.dto.CursoCriarDTO;
 import com.backend.institutovetta.domain.curso.dto.CursoListarDTO;
 import com.backend.institutovetta.domain.curso.dto.CursosDetalhesDTO;
@@ -62,7 +63,15 @@ public class CursoController {
         } catch (BusinessException e) {
             return ResponseEntity.badRequest().body(new ErroResponse(e.getMessage()));
         }
+    }
 
+    @GetMapping("/{id}/relacionados")
+    public ResponseEntity<List<CursoListarDTO>> relacionados(
+            @PathVariable Long id
+    ){
 
+        return ResponseEntity.ok(
+                cursoService.buscarRelacionados(id)
+        );
     }
 }

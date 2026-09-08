@@ -33,6 +33,7 @@ public class Curso {
     private String descricao;
 
     @NotBlank(message = "o resumo é obrigatorio.")
+    @Column(name = "sobre_curso", columnDefinition = "TEXT")
     private String sobreCurso;
 
     @Column(name = "imagem-curso", columnDefinition = "BYTEA")
